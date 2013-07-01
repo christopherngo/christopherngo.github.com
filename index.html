@@ -54,7 +54,13 @@
           <a class="brand" href="index.html">The Vaper House</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                  <li><a tabindex="-1" href="#" id="batteryNav">Battery</a></li>
+                  <li><a tabindex="-1" href="#" id="tanksNav">Tanks</a></li>
+                  <li><a tabindex="-1" href="#" id="tipsNav">Tips</a></li>
+                </ul>
+              </li>
               <li><a href="./starter.html">Starter Packages</a></li>
               <li><a href="./contact.html">Contact</a></li>
             </ul>
@@ -388,14 +394,38 @@
     <script src="../ThirdParty/prettyPhoto/js/jquery.prettyPhoto.js"></script>
   -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="ThirdParty/bootstrap/js/bootstrap.js"></script>
     <script src="ThirdParty/prettyPhoto/js/jquery.prettyPhoto.js"></script>
 
     <script>
       $(document).ready(function(){
+          var body = $('html, body');
+
           $("[rel^='prettyPhoto']").prettyPhoto({
             show_title:true,            
             social_tools: false
           });
+
+          $('#batteryNav').click(function(){
+            var title = $('.container').find('h3')[0];
+            var offset = $(title).position();
+            body.animate({scrollTop: offset.top -60},1000);
+
+          })
+
+          $('#tanksNav').click(function(){
+            var title = $('.container').find('h3')[1];
+            var offset = $(title).position();
+            body.animate({scrollTop: offset.top-60},1000);
+
+          })
+
+          $('#tipsNav').click(function(){
+            var title = $('.container').find('h3')[2];
+            var offset = $(title).position();
+            body.animate({scrollTop: offset.top},1000);
+
+          })
       });
     </script>
 
