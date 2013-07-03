@@ -25,6 +25,35 @@
       div.pp_default .pp_description{
         margin-top:10px;
       }
+      #logoImg {
+        -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+        border-radius: 5px;
+        position: absolute;
+        padding-top: 20px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        background-color: white;
+        background-image: none;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: top left;
+        z-index: 999999;
+        margin-top: -20px;
+        margin-left: -10%;
+    }
+
+      #logoImg:hover {
+        -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,1);
+      }
+
+      .nav {
+        padding-left: 15%;
+      }
+
+      h3 {
+        text-align: center;
+      }      
     </style>
     <link href="ThirdParty/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -51,7 +80,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.html">The Vaper House</a>
+          <a class="brand" href="index.html"><img src='images/logoTest.png' id='logoImg'/></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home <b class="caret"></b></a>
@@ -401,31 +430,31 @@
       $(document).ready(function(){
           var body = $('html, body');
 
-          $("[rel^='prettyPhoto']").prettyPhoto({
-            show_title:true,            
-            social_tools: false
-          });
+            $("[rel^='prettyPhoto']").prettyPhoto({
+              show_title:true,            
+              social_tools: false
+            });
 
-          $('#batteryNav').click(function(){
-            var title = $('.container').find('h3')[0];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top -60},1000);
+            $('#batteryNav').click(function(){
+              var title = $('.container').find('h3')[0];
+              var offset = $(title).position();
+              body.animate({scrollTop: offset.top -60},1000);
 
-          })
+            })
 
-          $('#tanksNav').click(function(){
-            var title = $('.container').find('h3')[1];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top-60},1000);
+            $('#tanksNav').click(function(){
+              var title = $('.container').find('h3')[1];
+              var offset = $(title).position();
+              body.animate({scrollTop: offset.top-60},1000);
 
-          })
+            })
 
-          $('#tipsNav').click(function(){
-            var title = $('.container').find('h3')[2];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top},1000);
+            $('#tipsNav').click(function(){
+              var title = $('.container').find('h3')[2];
+              var offset = $(title).position();
+              body.animate({scrollTop: offset.top},1000);
 
-          })
+            })
       });
     </script>
 
