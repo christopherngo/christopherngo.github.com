@@ -435,21 +435,24 @@
               social_tools: false
             });
 
-            $('#batteryNav').click(function(){
+            $('#batteryNav').click(function(e){
+              e.preventDefault();
               var title = $('.container').find('h3')[0];
               var offset = $(title).position();
               body.animate({scrollTop: offset.top -60},1000);
 
             })
 
-            $('#tanksNav').click(function(){
+            $('#tanksNav').click(function(e){
+              e.preventDefault();
               var title = $('.container').find('h3')[1];
               var offset = $(title).position();
               body.animate({scrollTop: offset.top-60},1000);
 
             })
 
-            $('#tipsNav').click(function(){
+            $('#tipsNav').click(function(e){
+              e.preventDefault();
               var title = $('.container').find('h3')[2];
               var offset = $(title).position();
               body.animate({scrollTop: offset.top},1000);
