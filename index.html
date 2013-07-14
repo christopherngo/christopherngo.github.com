@@ -8,54 +8,8 @@
     <!-- Le styles -->
     <link href="ThirdParty/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="ThirdParty/prettyPhoto/css/prettyPhoto.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-      h4{
-        text-align:center;
-      }
-      p{
-        text-align:center;
-      }
-      p.pp_description{
-        text-align:left;
-        margin-top: 10px;
-      }
-      div.pp_default .pp_description{
-        margin-top:10px;
-      }
-      #logoImg {
-        -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
-        border-radius: 5px;
-        position: absolute;
-        padding-top: 20px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-        background-color: white;
-        background-image: none;
-        background-repeat: repeat;
-        background-attachment: scroll;
-        background-position: top left;
-        z-index: 999999;
-        margin-top: -20px;
-        margin-left: -10%;
-    }
-
-      #logoImg:hover {
-        -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,1);
-      }
-
-      .nav {
-        padding-left: 15%;
-      }
-
-      h3 {
-        text-align: center;
-      }      
-    </style>
     <link href="ThirdParty/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -63,11 +17,7 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ThirdParty/bootstrap/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ThirdParty/bootstrap/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ThirdParty/bootstrap/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../ThirdParty/bootstrap/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../ThirdParty/bootstrap/ico/favicon.png">
+   <link rel="shortcut icon" href="images/logoTest.png">
   </head>
 
   <body>
@@ -80,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.html"><img src='images/logoTest.png' id='logoImg'/></a>
+          <a class="brand hidden-phone" href="index.html"><img src='images/logoTest.png' id='logoImg'/></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home <b class="caret"></b></a>
@@ -120,241 +70,7 @@
     <script type="text/javascript" src="ThirdParty/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="ThirdParty/handlebars/handlebars.js"></script>
     <script src="ThirdParty/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-
-    <script>
-      $(document).ready(function(){
-          var body = $('html, body');
-
-          $('#batteryNav').click(function(e){
-            e.preventDefault();
-            var title = $('.container').find('h3')[0];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top -60},1000);
-
-          });
-
-          $('#tanksNav').click(function(e){
-            e.preventDefault();
-            var title = $('.container').find('h3')[1];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top-60},1000);
-
-          });
-
-          $('#tipsNav').click(function(e){
-            e.preventDefault();
-            var title = $('.container').find('h3')[2];
-            var offset = $(title).position();
-            body.animate({scrollTop: offset.top},1000);
-
-          });
-
-
-          var batteryData = [
-            {
-              name:"Ego Mini (Black)", 
-              url: "images/800x600/battery/egoMiniBlack.JPG",
-              price: "20.00",
-              type: "battery"  
-            }, 
-            {
-              name:"Ego Mini (White)", 
-              url: "images/800x600/battery/egoMiniWhite.JPG",
-              price: "20.00",
-              type: "battery"  
-            }, 
-            {
-              name:"Ego T Pass (650 mah)", 
-              url: "images/800x600/battery/egoTPassthrough.JPG",
-              price: "30.00",
-              type: "battery"  
-            },
-            {
-              name:"Ego T Pass (1000 mah)", 
-              url: "images/800x600/battery/egoTPassthrough.JPG",
-              price: "35.00",
-              type: "battery"  
-            },
-            {
-              name:"Ego C Twist (Black)", 
-              url: "images/800x600/battery/egoCTwistBlack.jpg",
-              price: "45.00",
-              type: "battery"  
-            },
-            {
-              name:"Ego C Twist (Blue)", 
-              url: "images/800x600/battery/egoCTwistBlue.jpg",
-              price: "45.00",
-              type: "battery"  
-            },
-            {
-              name:"Ego C Twist (White)", 
-              url: "images/800x600/battery/egoCTwistWhite.JPG",
-              price: "45.00",
-              type: "battery"  
-            },
-            {
-              name:"Evic (Silver)", 
-              url: "images/800x600/battery/evicSilver.JPG",
-              price: "80.00",
-              type: "battery" 
-            },
-            {
-              name:"Evic (Black)", 
-              url: "images/800x600/battery/evicBlack.JPG",
-              price: "85.00",
-              type: "battery" 
-            },
-          ];
-
-          var tankData = [
-            {
-              name:"DCT (Blue)", 
-              url: "images/800x600/tanks/dctBlue.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"DCT (Purple)", 
-              url: "images/800x600/tanks/dctPurple.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"DCT (Clear)", 
-              url: "images/800x600/tanks/dctClear.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"DCT (Smoke)", 
-              url: "images/800x600/tanks/dctSmoke.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Black)", 
-              url: "images/800x600/tanks/viviNovaBlack.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Blue)", 
-              url: "images/800x600/tanks/viviNovaBlue.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Clear)", 
-              url: "images/800x600/tanks/viviNovaClear.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Green)", 
-              url: "images/800x600/tanks/viviNovaGreen.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Red)", 
-              url: "images/800x600/tanks/viviNovaRed.JPG",
-              price: "10.00",
-              type: "tank"  
-            },
-            {
-              name:"Vivi Nova (Yellow)", 
-              url: "images/800x600/tanks/viviNovaYellow.JPG",
-              price: "10.00",
-              type: "tank"  
-            }
-          ];        
-
-          var tipData = [
-            {
-              name:"Aluminum Drip (Blue)", 
-              url: "images/800x600/tips/aluminumDripBlue.JPG",
-              price: "6.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Black)", 
-              url: "images/800x600/tips/ceramicDripBlack.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Blue)", 
-              url: "images/800x600/tips/ceramicDripBlue.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Blue Alt)", 
-              url: "images/800x600/tips/ceramicDripBlue1.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Jade)", 
-              url: "images/800x600/tips/ceramicDripJade.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Jade Alt)", 
-              url: "images/800x600/tips/ceramicDripJade1.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Red)", 
-              url: "images/800x600/tips/ceramicDripRed.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Ceramic Drip (Red Alt)", 
-              url: "images/800x600/tips/ceramicDripRed1.JPG",
-              price: "8.00",
-              type: "tip"  
-            },
-            {
-              name:"Wooden Drip", 
-              url: "images/800x600/tips/woodenDrip.JPG",
-              price: "8.00",
-              type: "tip"  
-            }
-          ];  
-
-/*
-          var Data = [
-            {
-              name:"", 
-              url: "",
-              price: "",
-              type: ""  
-            },
-          ];
-*/
-
-          //Get the HTML from the template in the script tag
-          var galleryTemplateScript = $("#gallery-template").html(); 
-
-          //Compile the template
-          var theTemplate = Handlebars.compile (galleryTemplateScript); 
-
-          // Generate gallery images
-          $("#batterySection").append(theTemplate(batteryData));
-          $("#tankSection").append(theTemplate(tankData));
-          $("#tipSection").append(theTemplate(tipData)); 
-
-          $("[rel^='prettyPhoto']").prettyPhoto({
-            show_title:true,            
-            social_tools: false
-          });
-      });
-    </script>
+    <script src="js/main.js"></script>
 
 <!-- TEMPLATES -->
 <script id="gallery-template" type="x-handlebars-template">
